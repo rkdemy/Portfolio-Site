@@ -15,7 +15,7 @@
 
 .skills_content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
 
   text-align: center;
   margin-top: 1.5rem;
@@ -34,15 +34,17 @@
 }
 
 .skills_learning {
-  margin-top: 2rem;
+  font-weight: 500;
+  margin-top: 3rem;
   font-size: 17px;
+  color: var(--hero-intro);
 }
 
 .skills_learning_content {
   display: grid;
   text-align: center;
   margin-top: 1.5rem;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .skills_learning_content p {

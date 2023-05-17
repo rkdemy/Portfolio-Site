@@ -100,7 +100,7 @@ const Skills = () => {
         </p>
       </article>
 
-      <p className={styles.skills_learning}>I'm currently working on:</p>
+      <h4 className={styles.skills_learning}>I'm currently working on:</h4>
       <article className={styles.skills_learning_content}>
         <p>
           <span>

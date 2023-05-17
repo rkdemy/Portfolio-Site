@@ -1,7 +1,15 @@
 "use client";
 import React, { useRef, useState, useEffect, useReducer } from "react";
 import styles from "./Contact.module.css";
-import { AiOutlineMail, AiFillLinkedin } from "react-icons/ai";
+import dynamic from "next/dynamic";
+
+const AiFillLinkedin = dynamic(() =>
+  import("react-icons/ai").then((module) => module.AiFillLinkedin)
+);
+
+const AiFillGithub = dynamic(() =>
+  import("react-icons/ai").then((module) => module.AiFillGithub)
+);
 
 const nameReducer = (state, action) => {
   if (action.type === "NAME_INPUT") {
@@ -111,20 +119,26 @@ const Contact = () => {
       <div className={styles.contact_left}>
         <h2>You can find me here!</h2>
         <h3>I'd love to hear from you! I'm always here to chat.</h3>
-        {/* 
-        <p>
-          <AiOutlineMail style={{ marginRight: "1rem" }} />
-          roykdemy@gmail.com
-        </p> */}
-        <p>
-          <a
-            href="https://www.linkedin.com/in/roy-kim-0428b7276/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <AiFillLinkedin />
-          </a>
-        </p>
+        <article className={styles.contact_left_links}>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/roy-kim-0428b7276/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiFillLinkedin />
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://github.com/rkdemy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiFillGithub />
+            </a>
+          </p>
+        </article>
       </div>
       <form className={styles.contact_form} onSubmit={handleSubmit}>
         <div className={styles.contact_heading}>

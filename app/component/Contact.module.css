@@ -33,6 +33,14 @@
   color: #0077b5;
 }
 
+.contact_left_links {
+  display: flex;
+}
+
+.contact_left_links p {
+  margin-right: 1rem;
+}
+
 .contact_form h1 {
   font-family: "IBM Plex Mono";
   font-size: 36px;
