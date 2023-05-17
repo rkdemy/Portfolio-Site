@@ -1,0 +1,138 @@
+.section span {
+  font-family: "IBM Plex Mono";
+  color: var(--nav-numbers);
+  font-size: 18px;
+  margin-right: 1rem;
+}
+
+.figure span {
+  color: var(--section-bg);
+  background-color: var(--contact-text);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 16px;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+.figure p {
+  margin-bottom: 1.5rem;
+}
+
+.tech {
+  background-color: black;
+  color: white;
+  border-radius: 0 !important;
+}
+
+/* Tablet and Phone */
+@media screen and (max-width: 1499px) {
+  .section,
+  .article,
+  .aside {
+    padding-top: 1rem;
+    color: var(--about-text);
+  }
+
+  .aside h1 {
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem 0 1rem;
+  }
+
+  .aside {
+    margin: 0 auto;
+  }
+
+  .figure {
+    max-width: 600px;
+    padding-bottom: 4rem;
+    border-bottom: 1px var(--line);
+  }
+
+  .figure h2 {
+    margin: 1.5rem 0 1.5rem 0;
+    font-weight: 500;
+    font-size: 19px;
+    vertical-align: middle;
+    opacity: 0.9;
+  }
+
+  .figure p {
+    font-size: 19px;
+    line-height: 25px;
+  }
+
+  .image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
+/* FullScreen */
+@media screen and (min-width: 1500px) {
+  .section {
+    max-width: 75%;
+  }
+  .section,
+  .article,
+  .aside {
+    margin: 0 auto;
+    padding-top: 3rem;
+    align-items: center;
+  }
+
+  .aside h1 {
+    font-size: 36px;
+    color: var(--about-title);
+    align-items: center;
+  }
+
+  .article {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center;
+    align-items: center;
+  }
+
+  .aside .image {
+    max-width: 600px;
+    align-items: center;
+    height: auto;
+    margin-top: 5rem;
+  }
+
+  .figure {
+    margin: 5rem 2rem 0 2rem;
+    max-width: 600px;
+    align-items: center;
+  }
+
+  .figure h2 {
+    text-align: right;
+    margin-bottom: 1rem;
+    color: var(--about-title);
+  }
+
+  .figure p {
+    padding: 1.5rem 2rem;
+    background-color: var(--page-bg);
+    border-radius: 8px;
+    box-shadow: 5px 5px var(--hero-intro);
+    font-size: 17px;
+    line-height: 21px;
+    color: var(--port-text);
+  }
+}
