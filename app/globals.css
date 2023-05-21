@@ -3,13 +3,10 @@
 :root,
 html[data-theme="light"] {
   --max-width: 80vw;
-  /* --page-bg: #f7fbc5; */
   --page-bg: #f42144;
-  /* --page-bg: white; */
   --section-bg: #fffbeb;
   --hero-intro: #45193b;
   --hero-name: #fffbeb;
-  /* --hero-name: black; */
   --hero-desc: #45193b;
   --line: solid #45193b;
   background-color: var(--test-color);

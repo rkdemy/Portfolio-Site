@@ -1,34 +1,48 @@
 "use client";
 import styles from "./Navbar.module.css";
 import { FaBars } from "react-icons/fa";
+import Link from "next/link";
+import { useMenuContext } from "../context/menu_context";
 
 const Navbar = ({ children }) => {
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    section.scrollIntoView({ behavior: "smooth" });
-  };
+  const { openSideBar } = useMenuContext();
 
   return (
     <>
       <nav className={styles.hero_nav_links}>
         <div className={styles.hero_nav_content}>
-          <div className={styles.hero_nav_logo}>||||||||||</div>
-          <button type="button" className={styles.nav_toggle}>
-            <FaBars className="nav-toggle-circle" />
+          <div className={styles.hero_nav_logo}>
+            <Link href="#home" scroll={false}>
+              ||||||||||
+            </Link>
+          </div>
+          <button
+            type="button"
+            className={styles.nav_toggle}
+            onClick={openSideBar}
+          >
+            <FaBars />
           </button>
           <ul className={styles.nav_links}>
             <li>
-              <a onClick={() => scrollToSection("about")}>
+              <Link href="#about">
                 Bio <span>01</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a onClick={() => scrollToSection("portfolio")}>
-                Portfolio <span>02</span>
-              </a>
+              <Link href="#skills">
+                Skills <span>02</span>
+              </Link>
             </li>
             <li>
-              Resume <span>03</span>
+              <Link href="#portfolio">
+                Portfolio <span>03</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/project">
+                Resume <span>04</span>
+              </Link>
             </li>
           </ul>
         </div>

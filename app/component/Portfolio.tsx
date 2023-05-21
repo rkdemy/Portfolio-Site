@@ -16,6 +16,7 @@ const Portfolio = () => {
               className={styles.image}
               src={netflix}
               alt="Netflix Login Screen"
+              width={600}
             />
           </aside>
           <figure className={styles.figure}>
@@ -42,6 +43,7 @@ const Portfolio = () => {
               className={styles.image}
               src={ecommerce}
               alt="Ecommerce Shop"
+              width={600}
             />
           </aside>
           <figure className={styles.figure}>

@@ -23,7 +23,6 @@
 .hero_nav_content {
   width: 90%;
   display: flex;
-
   justify-content: space-between;
   padding: 1rem;
 }
@@ -31,6 +30,7 @@
 .hero_nav_logo {
   margin-left: 1.5rem;
   font-size: 28px;
+  cursor: pointer;
 }
 
 .nav_toggle {
@@ -61,7 +61,6 @@
     display: flex;
     width: 90%;
     justify-content: space-between;
-    /* color: var(--hero-name); */
     color: var(--hero-intro);
   }
 
@@ -89,7 +88,12 @@
     font-size: 10px;
   }
 
-  .hero_nav_links li:hover {
+  .hero_nav_content a {
+    text-decoration: none;
+    color: var(--hero-intro);
+  }
+
+  .hero_nav_content a:hover {
     color: var(--hero-name);
   }
 }

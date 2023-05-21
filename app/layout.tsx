@@ -1,7 +1,10 @@
 import Head from "next/head";
 import Navbar from "./component/Navbar";
+import PageProvider from "./PageProvider";
 import "./globals.css";
 import { inter } from "./utils/fonts";
+import { MenuProvider } from "./context/menu_context";
+import Sidebar from "./component/Sidebar";
 
 export const metadata = {
   title: "Roy",
@@ -22,7 +25,14 @@ export default function RootLayout({
         />
       </Head>
       <body className={inter.className}>
-        <Navbar>{children}</Navbar>
+        <PageProvider>
+          <MenuProvider>
+            <Navbar>
+              <Sidebar />
+              {children}
+            </Navbar>
+          </MenuProvider>
+        </PageProvider>
       </body>
     </html>
   );

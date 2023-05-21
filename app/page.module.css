@@ -17,7 +17,8 @@
   align-items: center;
   justify-content: center;
   margin-top: 94vh;
-  padding-bottom: 20rem;
+  padding: 7rem 0;
+  height: auto;
 }
 
 .skills {
@@ -29,8 +30,17 @@
 }
 
 .portfolio {
-  align-items: center;
+  display: flex;
+  justify-content: center;
   background-color: var(--section-bg);
+  height: auto;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  background-color: var(--section-bg);
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 800px) {

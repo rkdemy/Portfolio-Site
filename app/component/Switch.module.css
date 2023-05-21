@@ -3,8 +3,6 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  /* width: 420px;
-  height: 150px; */
   height: 320px;
   width: 900px;
   border-radius: 500px;
@@ -128,6 +126,10 @@
     height: 150px;
   }
 
+  .switch_container:hover {
+    height: 140px;
+  }
+
   .cloud {
     position: absolute;
     height: 188px;
@@ -190,8 +192,12 @@
   }
 
   .switch_container {
-    width: 280px;
+    width: 230px;
     height: 100px;
+  }
+
+  .switch_container:hover {
+    height: 90px;
   }
 
   .cloud {
@@ -249,16 +255,13 @@
   }
 }
 
-@media screen and (max-width: 800px) {
-  .switch_container {
-    width: 230px;
-    height: 100px;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .switch_container {
     width: 190px;
     height: 100px;
+  }
+
+  .switch_container:hover {
+    height: 90px;
   }
 }

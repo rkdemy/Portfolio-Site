@@ -15,8 +15,8 @@ const Hero = () => {
         <div className={styles.contact}>
           <div className={styles.contact_content}>
             <div className={styles.hero_desc}>
-              Born in 2000, Sydney, Australia. I specialize in Front-End
-              development with general Full-Stack knowledge.
+              Born in Sydney, Australia. I specialize in Front-End development
+              with general Full-Stack knowledge.
             </div>
             <ContactAnimate />
           </div>

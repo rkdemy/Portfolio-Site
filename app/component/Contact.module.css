@@ -2,9 +2,10 @@
   background-color: var(--section-bg);
   color: var(--contact-text);
   height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  place-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
 }
 
 .contact_left h3,
@@ -125,6 +126,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
   }
 
   .contact_left {

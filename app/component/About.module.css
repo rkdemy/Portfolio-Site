@@ -9,8 +9,8 @@
 }
 
 .about_content {
-  margin-top: 12rem;
-  max-width: 67%;
+  margin-top: 0rem;
+  max-width: 70%;
   width: 100%;
   box-sizing: border-box;
 }
@@ -67,7 +67,7 @@
     margin-top: 5rem;
     width: 100%;
     max-width: 95%;
-    padding-bottom: 10rem;
+    padding-bottom: 0rem;
   }
 
   .about_content p {

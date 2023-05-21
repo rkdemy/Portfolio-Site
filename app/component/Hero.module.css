@@ -58,8 +58,13 @@
 }
 
 @media screen and (max-width: 1570px) {
+  .hero_intro {
+    margin-left: 1rem;
+  }
+
   .hero_name {
     font-size: 200px;
+    margin-top: 2rem;
   }
 
   .hero_desc {
@@ -75,6 +80,10 @@
 }
 
 @media screen and (max-width: 800px) {
+  .hero_intro {
+    margin-left: 0.5rem;
+  }
+
   .hero_name {
     margin-top: 2rem;
     font-size: 128px;
