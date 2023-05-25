@@ -4,6 +4,8 @@ import styles from "./Switch.module.css";
 import Image from "next/image";
 import clouds from "../assets/Component 1.png";
 import { useTheme } from "next-themes";
+import graySydney from "../assets/hero_images/graysydney.png";
+import sydney from "../assets/hero_images/sydney.jpg";
 
 const Switch = () => {
   //Themes

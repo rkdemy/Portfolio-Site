@@ -45,6 +45,10 @@
   transform: translateY(0.2rem);
 }
 
+.front_end {
+  object-fit: fill !important;
+}
+
 @media screen and (max-width: 1300px) {
   .about_content p {
     font-size: 38px;
@@ -64,7 +68,7 @@
 
 @media screen and (max-width: 600px) {
   .about_content {
-    margin-top: 5rem;
+    margin-top: 0rem;
     width: 100%;
     max-width: 95%;
     padding-bottom: 0rem;

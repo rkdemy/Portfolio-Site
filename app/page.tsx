@@ -23,6 +23,7 @@ export default function Home() {
       <section className={styles.portfolio} id="portfolio">
         <Portfolio />
       </section>
+
       <section className={styles.contact} id="contact">
         <Contact />
       </section>

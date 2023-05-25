@@ -1,17 +1,33 @@
+"use client";
 import styles from "./Portfolio.module.css";
 import Image from "next/image";
 import netflix from "../assets/portfolio_images/netflix.png";
 import ecommerce from "../assets/portfolio_images/ecommerce.png";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Portfolio = () => {
+  const ref = useRef();
+  const secondRef = useRef();
+  const isInView = useInView(ref, { once: true });
+  const secondIsInView = useInView(secondRef, { once: true });
+
   return (
     <>
       <section className={styles.section}>
-        <article className={styles.article}>
+        <h1>
+          <span>02.</span>FEATURED WORKS
+        </h1>
+        <article
+          className={styles.article}
+          ref={ref}
+          style={{
+            transform: isInView ? "none" : "translateX(-200px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
           <aside className={styles.aside}>
-            <h1>
-              <span>02.</span>FEATURED WORKS
-            </h1>
             <Image
               className={styles.image}
               src={netflix}
@@ -23,7 +39,6 @@ const Portfolio = () => {
             <h2>
               <span>2023</span> Netflix Clone
             </h2>
-
             <p>
               I wanted to challenge myself by recreating Netflix without looking
               at Netflix tutorials on Youtube or Github. My main goal was to
@@ -37,7 +52,15 @@ const Portfolio = () => {
             <span className={styles.tech}>Firebase</span>
           </figure>
         </article>
-        <article className={styles.article}>
+        <article
+          className={styles.article}
+          ref={secondRef}
+          style={{
+            transform: secondIsInView ? "none" : "translateX(-200px)",
+            opacity: secondIsInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+        >
           <aside className={styles.aside}>
             <Image
               className={styles.image}

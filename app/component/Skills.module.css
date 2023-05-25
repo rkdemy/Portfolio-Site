@@ -1,5 +1,7 @@
 .skills_container {
   max-width: 64%;
+  overflow-x: hidden;
+  opacity: 1 !important;
 }
 
 .skills_container span {
@@ -25,7 +27,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, auto));
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
 .skills_content p {
@@ -34,15 +36,15 @@
 
 .skills_learning {
   font-weight: 500;
-  margin-top: 3rem;
+  margin-top: 2rem;
   font-size: 17px;
-  color: var(--hero-intro);
+  color: var(--port-text);
 }
 
 .skills_learning_content {
   display: grid;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
@@ -51,6 +53,12 @@
 }
 
 @media screen and (max-width: 500px) {
+  .skills_container {
+    max-width: 95%;
+    overflow-x: hidden;
+    opacity: 1 !important;
+  }
+
   .skills_content {
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);

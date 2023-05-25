@@ -9,29 +9,30 @@ const Sidebar = () => {
   const { toggleSide, closeSideBar } = useMenuContext();
 
   return (
-    <div className={`${toggleSide ? styles.show_sidebar : styles.sidebar}`}>
-      <div className={styles.sidebar_header}>
-        <Link href="#home" scroll={false}>
-          ||||||||||
-        </Link>
-        <button
-          className={styles.close_btn}
-          type="button"
-          onClick={closeSideBar}
-        >
-          <FaTimes />
-        </button>
+    <aside
+      className={`${
+        toggleSide ? `${styles.show_sidebar} ${styles.sidebar}` : styles.sidebar
+      }`}
+    >
+      <div className={styles.sidebar_container}>
+        <div className={styles.sidebar_header}>
+          <Link href="#home" scroll={false}>
+            ||||||||||
+          </Link>
+          <button
+            className={styles.close_btn}
+            type="button"
+            onClick={closeSideBar}
+          >
+            <FaTimes />
+          </button>
+        </div>
       </div>
       <ul className={styles.nav_links}>
         <div className={styles.nav_links_content}>
           <Link href="#about">
             <li>
               Bio <span>01</span>
-            </li>
-          </Link>
-          <Link href="#skills">
-            <li>
-              Skills <span>02</span>
             </li>
           </Link>
           <Link href="#portfolio">
@@ -46,7 +47,7 @@ const Sidebar = () => {
           </Link>
         </div>
       </ul>
-    </div>
+    </aside>
   );
 };
 

@@ -34,11 +34,11 @@
     color: var(--about-text);
   }
 
-  .aside h1 {
+  .section h1 {
     display: flex;
     font-size: 24px;
     align-items: center;
-    margin-bottom: 2rem;
+    margin: 0 1rem 2rem 1rem;
   }
 
   .article {
@@ -89,35 +89,29 @@
   .section,
   .article,
   .aside {
-    margin: 0 auto;
-    padding-top: 3rem;
+    padding: 0;
     align-items: center;
   }
 
-  .aside h1 {
+  .section h1 {
     font-size: 36px;
     color: var(--about-title);
-    align-items: center;
   }
 
   .article {
     margin-top: 2rem;
+    margin-bottom: 5rem;
     justify-content: space-between;
-    align-items: center;
     display: flex;
   }
 
   .aside .image {
-    align-items: center;
     height: auto;
-    margin-top: 5rem;
   }
 
   .figure {
     margin: 0 auto;
-    margin-top: 5rem;
     max-width: 600px;
-    align-items: center;
   }
 
   .figure h2 {
@@ -134,5 +128,11 @@
     font-size: 17px;
     line-height: 21px;
     color: var(--port-text);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .figure span {
+    font-size: 12px;
   }
 }

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import styles from "./ContactAnimate.module.css";
 import { righteous } from "../utils/fonts";
+import bubble from "../assets/text_bubble.svg";
 const colors = ["#7c4dff", "#0091ea", "#ff9100", "#ff1744"];
 
 const ContactAnimate = () => {
@@ -23,7 +24,7 @@ const ContactAnimate = () => {
   return (
     <div className={styles.contact_container}>
       <div className={styles.contact_container_circle}>
-        <section>
+        <section className={styles.bubble}>
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <path
               id="circlePath"

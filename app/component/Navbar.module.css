@@ -20,15 +20,19 @@
   display: none;
 }
 
+.nav_contact_links {
+  display: none;
+}
+
 .hero_nav_content {
   width: 90%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+
+  align-items: center;
 }
 
 .hero_nav_logo {
-  margin-left: 1.5rem;
   font-size: 28px;
   cursor: pointer;
 }
@@ -49,6 +53,10 @@
     display: none;
   }
 
+  .nav_contact_links {
+    display: block;
+  }
+
   .hero_nav_links {
     position: fixed;
     width: 100%;
@@ -59,9 +67,10 @@
 
   .hero_nav_content {
     display: flex;
-    width: 90%;
+    width: 70%;
     justify-content: space-between;
     color: var(--hero-intro);
+    align-items: center;
   }
 
   .hero_nav_links ul {
@@ -73,19 +82,11 @@
   }
 
   .hero_nav_links li {
-    font-weight: 700;
-    margin-right: 1.5rem;
-    font-size: 32px;
+    font-weight: 500;
+    margin-left: 1.5rem;
+    font-size: 20px;
     cursor: pointer;
     text-decoration: none;
-  }
-
-  .hero_nav_links span {
-    position: relative;
-    font-weight: 700;
-    bottom: 1.8rem;
-    right: 0.9rem;
-    font-size: 10px;
   }
 
   .hero_nav_content a {

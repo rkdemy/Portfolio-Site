@@ -2,7 +2,6 @@
 
 .hero_container {
   width: 100%;
-  background-color: var(--page-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +18,21 @@
   color: var(--hero-intro);
 }
 
+.underline {
+  transform: translate(2rem, 3rem);
+  filter: var(--hero-drawing);
+}
+
+.highlight_1 {
+  filter: var(--hero-drawing);
+  transform: translate(0rem, -20rem) rotate(180deg);
+}
+
+.highlight_2 {
+  filter: var(--hero-drawing);
+  transform: translate(-3rem, -6rem);
+}
+
 .hero_name {
   margin-top: 0rem;
   justify-content: center;
@@ -27,8 +41,6 @@
   font-weight: 500;
   align-items: center;
   color: var(--hero-name);
-  /* color: rgba(0, 0, 0, 0); */
-  /* -webkit-text-stroke: 2px var(--hero-name); */
 }
 
 .contact {
@@ -49,12 +61,13 @@
 }
 
 .hero_desc {
-  width: 900px;
+  /* visibility: hidden; */
+  /* width: 900px;
   font-size: 16px;
-  margin-top: 15rem;
+  margin-top: 14rem;
   letter-spacing: 2px;
   font-weight: 500;
-  color: var(--hero-name);
+  color: var(--hero-name); */
 }
 
 @media screen and (max-width: 1570px) {
@@ -77,6 +90,22 @@
   .contact_content {
     margin-bottom: 1rem;
   }
+
+  .underline {
+    transform: translate(1rem, 3rem);
+  }
+
+  .highlight_1 {
+    transform: translate(0rem, -9rem) rotate(180deg);
+    width: 40px;
+    height: auto;
+  }
+
+  .highlight_2 {
+    width: 120px;
+    height: auto;
+    transform: translate(-3rem, -3rem);
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -90,7 +119,7 @@
   }
 
   .contact {
-    bottom: -5rem;
+    /* bottom: -5rem; */
   }
 
   .hero_desc {
@@ -104,9 +133,24 @@
   .contact_content {
     margin-bottom: 1rem;
   }
+
+  .highlight_1 {
+    transform: translate(0rem, -5.5rem) rotate(180deg);
+    width: 30px;
+    height: auto;
+  }
+
+  .highlight_2 {
+    width: 100px;
+    height: auto;
+    transform: translate(-2rem, -2rem);
+  }
 }
 
 @media screen and (max-width: 500px) {
+  .hero_intro {
+    font-size: 18px;
+  }
   .hero_desc {
     width: auto;
     font-size: 16px;
@@ -120,5 +164,45 @@
 
   .hero_desc {
     font-size: 12px;
+  }
+  .underline {
+    width: 180px;
+    transform: translate(0rem, 2rem);
+  }
+
+  .highlight_1 {
+    transform: translate(0rem, -5.5rem) rotate(180deg);
+    width: 30px;
+    height: auto;
+  }
+
+  .highlight_2 {
+    width: 100px;
+    height: auto;
+    transform: translate(-2rem, -2rem);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .highlight_1 {
+    transform: translate(0rem, -5.5rem) rotate(180deg);
+    width: 20px;
+    height: auto;
+  }
+
+  .highlight_2 {
+    width: 70px;
+    height: auto;
+    transform: translate(-0.5rem, -2rem);
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .highlight_1 {
+    display: none;
+  }
+
+  .highlight_2 {
+    display: none;
   }
 }

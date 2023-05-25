@@ -30,7 +30,7 @@
 }
 
 .contact_left a {
-  font-size: 22px;
+  font-size: 30px;
   color: #0077b5;
 }
 
@@ -117,7 +117,7 @@
   color: var(--nav-numbers);
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1575px) {
   .contact_left {
     display: none;
   }
@@ -149,12 +149,22 @@
 }
 
 @media screen and (max-width: 500px) {
+  .contact_container {
+    display: flex;
+    justify-content: center;
+  }
+
   .contact_heading h1 {
     font-size: 28px;
   }
 
   .contact_heading h4 {
     font-size: 14px;
+  }
+
+  .contact_left {
+    text-align: center;
+    justify-content: center;
   }
 
   .contact_left h2 {

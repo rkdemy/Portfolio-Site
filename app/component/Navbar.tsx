@@ -3,6 +3,7 @@ import styles from "./Navbar.module.css";
 import { FaBars } from "react-icons/fa";
 import Link from "next/link";
 import { useMenuContext } from "../context/menu_context";
+import ContactLink from "./ContactLink";
 
 const Navbar = ({ children }) => {
   const { openSideBar } = useMenuContext();
@@ -23,26 +24,23 @@ const Navbar = ({ children }) => {
           >
             <FaBars />
           </button>
+          <div className={styles.nav_contact_links}>
+            <p>roykdemy@gmail.com</p>
+          </div>
+          <div className={styles.nav_contact_links}>
+            <ul>
+              <ContactLink />
+            </ul>
+          </div>
           <ul className={styles.nav_links}>
             <li>
-              <Link href="#about">
-                Bio <span>01</span>
-              </Link>
+              <Link href="#about">Bio</Link>
             </li>
             <li>
-              <Link href="#skills">
-                Skills <span>02</span>
-              </Link>
+              <Link href="#portfolio">Portfolio</Link>
             </li>
             <li>
-              <Link href="#portfolio">
-                Portfolio <span>03</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/project">
-                Resume <span>04</span>
-              </Link>
+              <Link href="/project">Resume</Link>
             </li>
           </ul>
         </div>

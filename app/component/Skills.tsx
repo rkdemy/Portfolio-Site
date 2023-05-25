@@ -36,86 +36,99 @@ const SiFigma = dynamic(() =>
 const SiStyledcomponents = dynamic(() =>
   import("react-icons/si").then((module) => module.SiStyledcomponents)
 );
+const SiPrisma = dynamic(() =>
+  import("react-icons/si").then((module) => module.SiPrisma)
+);
 
 const Skills = () => {
   return (
-    <div className={styles.skills_container}>
-      <h2>SKILLS & TOOLS</h2>
-      <p>The skills, tools and technologies I've used to create my projects:</p>
+    <>
+      <div className={styles.skills_container}>
+        <h2>SKILLS & TOOLS</h2>
+        <p>
+          The skills, tools and technologies I've used to create my projects:
+        </p>
 
-      <article className={styles.skills_content}>
-        <p>
-          <span>
-            <AiFillHtml5 />
-          </span>
-          HTML
-        </p>
-        <p>
-          <span>
-            <DiCss3 />
-          </span>
-          CSS
-        </p>
-        <p>
-          <span>
-            <SiJavascript />
-          </span>
-          JavaScript
-        </p>
-        <p>
-          <span>
-            <DiReact />
-          </span>
-          React
-        </p>
-        <p>
-          <span>
-            <AiFillGithub />
-          </span>
-          GitHub
-        </p>
-        <p>
-          <span>
-            <SiFirebase />
-          </span>
-          Firebase
-        </p>
-        <p>
-          <span>
-            <SiAuth0 />
-          </span>
-          Auth-0
-        </p>
-        <p>
-          <span>
-            <SiFigma />
-          </span>
-          Figma
-        </p>
-        <p>
-          <span>
-            <SiStyledcomponents />
-          </span>
-          styled-components
-        </p>
-      </article>
+        <article className={styles.skills_content}>
+          <p>
+            <span>
+              <AiFillHtml5 />
+            </span>
+            HTML
+          </p>
+          <p>
+            <span>
+              <DiCss3 />
+            </span>
+            CSS
+          </p>
+          <p>
+            <span>
+              <SiJavascript />
+            </span>
+            JavaScript
+          </p>
+          <p>
+            <span>
+              <DiReact />
+            </span>
+            React
+          </p>
+          <p>
+            <span>
+              <AiFillGithub />
+            </span>
+            GitHub
+          </p>
+          <p>
+            <span>
+              <SiFirebase />
+            </span>
+            Firebase
+          </p>
+          <p>
+            <span>
+              <SiAuth0 />
+            </span>
+            Auth-0
+          </p>
+          <p>
+            <span>
+              <SiFigma />
+            </span>
+            Figma
+          </p>
+          <p>
+            <span>
+              <SiStyledcomponents />
+            </span>
+            styled-components
+          </p>
+        </article>
 
-      <h4 className={styles.skills_learning}>I'm currently working on:</h4>
-      <article className={styles.skills_learning_content}>
-        <p>
-          <span>
-            <SiNextdotjs />
-          </span>
-          Next.JS
-        </p>
-        <p>
-          <span>
-            <SiTypescript />
-          </span>
-          Typescript
-        </p>
-      </article>
-    </div>
+        <h4 className={styles.skills_learning}>I'm currently working on:</h4>
+        <article className={styles.skills_learning_content}>
+          <p>
+            <span>
+              <SiNextdotjs />
+            </span>
+            Next.JS
+          </p>
+          <p>
+            <span>
+              <SiTypescript />
+            </span>
+            Typescript
+          </p>
+          <p>
+            <span>
+              <SiPrisma />
+            </span>
+            Prisma
+          </p>
+        </article>
+      </div>
+    </>
   );
 };
 

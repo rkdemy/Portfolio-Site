@@ -16,7 +16,7 @@ const About = () => {
           </h2>
           <p>
             I’m Roy Kim a student attending WSU diving into
-            <Image src={front_end} alt="" className={styles.pill_image} />{" "}
+            <Image src={front_end} alt="" className={`${styles.pill_image} ${styles.front_end}`} />
             Front-End Development. I discovered a
             <Image src={cat} alt="" className={styles.pill_image} />
             passion for web development which began my love affair with ReactJS.

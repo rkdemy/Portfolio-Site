@@ -6,6 +6,9 @@
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: var(--page-bg);
+  background-image: url("./assets/page_texture.png");
+  background-position: center;
 }
 
 .about {
@@ -27,12 +30,16 @@
   justify-content: center;
   width: 100%;
   padding: 7rem 0;
+  background-image: url("./assets/page_texture.png");
+  background-position: center;
+  /* background */
 }
 
 .portfolio {
+  padding: 7rem 0;
+  background-color: var(--section-bg);
   display: flex;
   justify-content: center;
-  background-color: var(--section-bg);
   height: auto;
 }
 
@@ -45,12 +52,12 @@
 
 @media screen and (max-width: 800px) {
   .hero {
-    height: 80vh;
+    height: 90vh;
     position: absolute;
   }
 
   .about {
     position: relative;
-    margin-top: 92vh;
+    margin-top: 88vh;
   }
 }
