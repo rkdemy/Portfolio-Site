@@ -1,39 +1,103 @@
+"use client";
 import styles from "./Hero.module.css";
-import ContactAnimate from "./ContactAnimate";
 import Switch from "./Switch";
 import Image from "next/image";
-import underline from "../assets/underline.png";
-import highlight from "../assets/highlight.svg";
-import good from "../assets/goodDay.png";
+import paint from "../assets/hero_section/paint.jpg";
+import paint2 from "../assets/hero_section/paint2Compressed.jpg";
+import BlurPaint from "../assets/hero_section/blur_paint.png";
+import BlurPaint2 from "../assets/hero_section/blur_paint2.png";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+
+const TbArrowMoveRight = dynamic(() =>
+  import("react-icons/tb").then((module) => module.TbArrowMoveRight)
+);
 
 const Hero = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
   return (
     <>
       <div className={styles.hero_container}>
         <div className={styles.hero_container__content}>
-          <div className={styles.hero_intro}>Hi, my name is</div>
-          <span>
-            <Image src={underline} className={styles.underline} />
-          </span>
-
           <div className={styles.hero_name}>
-            R<Switch />Y
-            <span>
-              <Image src={highlight} className={styles.highlight_1} />
-            </span>
-          </div>
-          <span>
-            <Image src={good} className={styles.highlight_2} />
-          </span>
-        </div>
-        <div className={styles.contact}>
-          <div className={styles.contact_content}>
-            <div className={styles.hero_desc}>
-              Born in Sydney, Australia. I specialize in Front-End development
-              with general Full-Stack knowledge.
+            <div
+              className={styles.hero_2}
+              ref={ref}
+              style={{
+                transform: isInView ? "none" : "translateY(150px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.1s linear",
+              }}
+            >
+              R<Switch />Y FRONT
             </div>
-            <ContactAnimate />
+            <div
+              className={styles.hero_3}
+              style={{
+                transform: isInView ? "none" : "translateY(150px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.13s linear",
+              }}
+            >
+              END
+              <div className={styles.image_container}>
+                <Image
+                  src={paint2}
+                  blurDataURL={BlurPaint2.src}
+                  placeholder="blur"
+                  alt="An abstract painting"
+                />
+              </div>
+            </div>
+            <div
+              className={styles.hero_4}
+              style={{
+                transform: isInView ? "none" : "translateY(150px)",
+                opacity: isInView ? 1 : 0,
+                transition: "all 0.15s linear",
+              }}
+            >
+              <div style={{ width: "100%" }}>
+                <Image
+                  src={paint}
+                  blurDataURL={BlurPaint.src}
+                  placeholder="blur"
+                  alt="An abstract painting"
+                />
+              </div>
+              DEVELOPER
+            </div>
           </div>
+        </div>
+        <div>
+          <ul
+            className={styles.hero_links}
+            style={{
+              transform: isInView ? "none" : "translateY(150px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 0.18s linear",
+            }}
+          >
+            <li>
+              <Link href="/projects" className={styles.underline}>
+                <aside className={styles.arrow}>
+                  <TbArrowMoveRight />
+                </aside>
+                my projects
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className={styles.underline}>
+                <aside className={styles.arrow}>
+                  <TbArrowMoveRight />
+                </aside>
+                about me
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </>

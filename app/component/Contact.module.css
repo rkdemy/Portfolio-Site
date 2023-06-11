@@ -1,7 +1,7 @@
 .contact_container {
   background-color: var(--section-bg);
   color: var(--contact-text);
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

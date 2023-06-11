@@ -34,11 +34,12 @@
     color: var(--about-text);
   }
 
-  .section h1 {
-    display: flex;
+  .section h2 {
     font-size: 24px;
     align-items: center;
-    margin: 0 1rem 2rem 1rem;
+    color: var(--about-title);
+    display: flex;
+    align-items: baseline;
   }
 
   .article {
@@ -59,7 +60,7 @@
     border-bottom: 1px var(--line);
   }
 
-  .figure h2 {
+  .figure h3 {
     margin: 1.5rem 0 1.5rem 0;
     font-weight: 500;
     font-size: 19px;
@@ -93,9 +94,11 @@
     align-items: center;
   }
 
-  .section h1 {
+  .section h2 {
     font-size: 36px;
     color: var(--about-title);
+    display: flex;
+    align-items: baseline;
   }
 
   .article {
@@ -114,7 +117,7 @@
     max-width: 600px;
   }
 
-  .figure h2 {
+  .figure h3 {
     text-align: right;
     margin-bottom: 1rem;
     color: var(--about-title);
@@ -123,7 +126,7 @@
   .figure p {
     padding: 1.5rem 2rem;
     background-color: var(--page-bg);
-    border-radius: 8px;
+    /* border-radius: 8px; */
     box-shadow: 5px 5px var(--hero-intro);
     font-size: 17px;
     line-height: 21px;

@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lilita+One&display=swap");
+
+.window_container {
+  display: block;
+  position: relative;
+  cursor: grab;
+  margin: 1rem;
+  max-width: 100%;
+  height: auto;
+  padding: 0rem 2px 1rem 2px;
+  border: 2px solid var(--hero-intro-darker);
+  background-color: var(--hero-intro);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5);
+  /* background-color: var(--hero-intro); */
+  border-radius: 15px;
+}
+
+.window_container:hover {
+  border: 1px solid var(--hero-intro-darker);
+  background-color: var(--hero-intro-darker);
+}
+
+.window_container aside {
+  margin-left: 0.3rem;
+}
+
+.circle {
+  height: 10px;
+  width: 10px;
+  margin: 0.6rem 0.3rem 0.3rem 0.3rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.circle:nth-child(1) {
+  background-color: #ff605c;
+}
+.circle:nth-child(2) {
+  background-color: #ffbd44;
+}
+.circle:nth-child(3) {
+  background-color: #00ca4e;
+}
+
+.window_container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.imageContainer:hover img {
+  opacity: 0.5;
+}
+
+.imageContainer:hover .link {
+  opacity: 1;
+}
+
+.link {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  color: white;
+}
+
+.window_container p {
+  color: var(--section-bg);
+  font-size: 16px;
+  font-family: "IBM Plex Mono";
+  margin: 0.8rem 1rem 0 1rem;
+  font-weight: 600;
+}
+
+.window_container {
+  animation: levitate 3.5s infinite ease-in-out;
+}
+
+.window2 {
+  animation: levitate2 3.5s infinite ease-in-out;
+}
+
+@keyframes levitate {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes levitate2 {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(18px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

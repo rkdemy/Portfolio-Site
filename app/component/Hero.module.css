@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lilita+One&display=swap");
 
+@font-face {
+  font-family: "OTFGlusp";
+  src: url("../OTFGlusp.ttf") format("typeface");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .hero_container {
   width: 100%;
   display: flex;
@@ -7,202 +14,136 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  font-family: "Righteous", "Inter";
-}
-
-.hero_intro {
-  font-family: "IBM Plex Mono";
-  position: absolute;
-  margin-left: 1.9rem;
-  font-size: 32px;
-  color: var(--hero-intro);
-}
-
-.underline {
-  transform: translate(2rem, 3rem);
-  filter: var(--hero-drawing);
-}
-
-.highlight_1 {
-  filter: var(--hero-drawing);
-  transform: translate(0rem, -20rem) rotate(180deg);
-}
-
-.highlight_2 {
-  filter: var(--hero-drawing);
-  transform: translate(-3rem, -6rem);
 }
 
 .hero_name {
+  display: block;
+  text-transform: capitalize;
   margin-top: 0rem;
   justify-content: center;
-  display: flex;
-  font-size: 450px;
+  font-size: 120px;
   font-weight: 500;
-  align-items: center;
+  line-height: 150px;
   color: var(--hero-name);
 }
 
-.contact {
+.hero_name img {
+  border-radius: 90px;
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 85px;
+}
+
+.hero_2,
+.hero_3,
+.hero_4,
+.hero_links {
   display: flex;
+}
+
+.hero_2 {
+  align-items: center;
+}
+
+.image_container {
+  position: relative;
+  width: 100%;
+  /* height: 85px; */
+  object-fit: cover;
+}
+
+.hero_links li {
+  list-style: none;
+  margin: 0 2rem;
+  display: flex;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hero_links a {
+  font-family: "IBM Plex Mono";
+  text-decoration: none;
+  color: var(--hero-name);
+  position: relative;
+  display: flex;
+}
+
+.underline::after {
+  content: "";
   position: absolute;
   width: 100%;
-  justify-content: center;
-  bottom: 0;
-  overflow: hidden;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--hero-name);
+  transform-origin: bottom right;
+  border-radius: 10px;
+  transition: transform 0.25s ease-out;
+  transform: scaleX(0);
 }
 
-.contact_content {
-  align-items: center;
+.underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.arrow {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  width: 90%;
+  align-items: center;
+  margin-right: 0.3rem;
 }
 
-.hero_desc {
-  /* visibility: hidden; */
-  /* width: 900px;
-  font-size: 16px;
-  margin-top: 14rem;
-  letter-spacing: 2px;
-  font-weight: 500;
-  color: var(--hero-name); */
-}
-
-@media screen and (max-width: 1570px) {
-  .hero_intro {
-    margin-left: 1rem;
-  }
-
+@media screen and (max-width: 1580px) {
   .hero_name {
-    font-size: 200px;
-    margin-top: 2rem;
+    font-size: 90px;
+    line-height: 130px;
   }
 
-  .hero_desc {
-    width: auto;
-    font-size: 16px;
-    margin-top: 10rem;
-    letter-spacing: 2px;
-    font-weight: 500;
-  }
-  .contact_content {
-    margin-bottom: 1rem;
-  }
-
-  .underline {
-    transform: translate(1rem, 3rem);
-  }
-
-  .highlight_1 {
-    transform: translate(0rem, -9rem) rotate(180deg);
-    width: 40px;
-    height: auto;
-  }
-
-  .highlight_2 {
-    width: 120px;
-    height: auto;
-    transform: translate(-3rem, -3rem);
+  .hero_name img {
+    height: 65px;
   }
 }
 
-@media screen and (max-width: 800px) {
-  .hero_intro {
-    margin-left: 0.5rem;
-  }
-
+@media screen and (max-width: 1290px) {
   .hero_name {
-    margin-top: 2rem;
-    font-size: 128px;
+    font-size: 70px;
+    line-height: 110px;
   }
 
-  .contact {
-    /* bottom: -5rem; */
+  .hero_name img {
+    height: 52px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .hero_name {
+    font-size: 50px;
+    line-height: 70px;
   }
 
-  .hero_desc {
-    width: auto;
-    font-size: 16px;
-    margin-top: 2rem;
-    letter-spacing: 2px;
-    font-weight: 500;
+  .hero_name img {
+    height: 35px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .hero_name {
+    font-size: 40px;
   }
 
-  .contact_content {
-    margin-bottom: 1rem;
-  }
-
-  .highlight_1 {
-    transform: translate(0rem, -5.5rem) rotate(180deg);
-    width: 30px;
-    height: auto;
-  }
-
-  .highlight_2 {
-    width: 100px;
-    height: auto;
-    transform: translate(-2rem, -2rem);
+  .hero_name img {
+    height: 30px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .hero_intro {
-    font-size: 18px;
-  }
-  .hero_desc {
-    width: auto;
-    font-size: 16px;
-    margin-top: 2rem;
-    letter-spacing: 2px;
-    font-weight: 500;
-  }
-  .contact_content {
-    margin-bottom: 1rem;
+  .hero_name {
+    font-size: 30px;
+    line-height: 50px;
   }
 
-  .hero_desc {
-    font-size: 12px;
-  }
-  .underline {
-    width: 180px;
-    transform: translate(0rem, 2rem);
-  }
-
-  .highlight_1 {
-    transform: translate(0rem, -5.5rem) rotate(180deg);
-    width: 30px;
-    height: auto;
-  }
-
-  .highlight_2 {
-    width: 100px;
-    height: auto;
-    transform: translate(-2rem, -2rem);
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .highlight_1 {
-    transform: translate(0rem, -5.5rem) rotate(180deg);
-    width: 20px;
-    height: auto;
-  }
-
-  .highlight_2 {
-    width: 70px;
-    height: auto;
-    transform: translate(-0.5rem, -2rem);
-  }
-}
-
-@media screen and (max-width: 412px) {
-  .highlight_1 {
-    display: none;
-  }
-
-  .highlight_2 {
-    display: none;
+  .hero_name img {
+    height: 22px;
   }
 }

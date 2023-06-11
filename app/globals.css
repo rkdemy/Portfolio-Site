@@ -1,4 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "OTFGlusp";
+  src: url("./OTFGlusp.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter&family=Lilita+One&display=swap");
 
 :root,
 html[data-theme="light"] {
@@ -7,12 +18,18 @@ html[data-theme="light"] {
   --page-bg: #fffbeb;
 
   --section-bg: white;
-  --hero-intro: #45193b;
+  --hero-intro: #2f1664;
+  --hero-intro-darker: #250962;
   /* --hero-name: #fffbeb; */
   --hero-name: #000000;
-  --hero-desc: #45193b;
-  --line: solid #45193b;
+  --hero-desc: #2f1664;
+  --line: solid #2f1664;
   background-color: var(--test-color);
+
+  /* --switch-border: 0px -1.81174px 2.41565px rgba(0, 0, 0, 0.25),
+    0px 2.41565px 2.41565px rgba(255, 255, 255, 0.94),
+    inset 0px 0.603912px 7.85086px rgba(0, 0, 0, 0.25),
+    inset 0px 4.22738px 5.43521px rgba(0, 0, 0, 0.25); */
 
   --switch-border: 0px -1.81174px 2.41565px rgba(0, 0, 0, 0.25),
     0px 2.41565px 2.41565px rgba(255, 255, 255, 0.94),
@@ -28,21 +45,25 @@ html[data-theme="light"] {
   --nav-numbers: #f42144;
 
   --clr-primary-2: #5d2d52;
+  --menu-color: black;
 }
 
 html[data-theme="dark"] {
   --max-width: 80vw;
-  --page-bg: #1b194b;
-  --section-bg: #01061d;
+  /* --page-bg: #1b194b; */
+  --page-bg: #171717;
+  --section-bg: #121212;
 
   --hero-intro: #818cf8;
-  --hero-name: #fecdd3;
+  --hero-intro-darker: #5667fd;
+  --hero-name: #f2f3f9;
+  /* --hero-name: #fecdd3; */
   --hero-desc: #c7d2fe;
   --line: solid #c7d2fe;
   background-color: var(--page-bg);
 
-  --about-text: #cfc4aa;
-  --about-title: #d9d2c3;
+  --about-text: #f7f7f7;
+  --about-title: #f7f7f7f0;
   --contact-text: rgb(213, 213, 213);
 
   --port-text: rgb(213, 213, 213);
@@ -52,17 +73,18 @@ html[data-theme="dark"] {
   --clr-primary-2: hsl(209, 61%, 16%);
 
   --hero-drawing: invert(100%);
+  --menu-color: black;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  /* transition: all 0.2s ease; */
+  font-family: "Inter", "IBM Mono Plex", "OTFGlusp", Arial, Helvetica,
+    sans-serif;
+  /* transition: all 0.2s ease;, */
 }
 
-body {
-  /* background-color: var(--page-bg); */
-  /* background: url("./assets/page_texture.png");
-  background-position: center; */
+div {
+  font-family: "Inter", "IBM Mono Plex", "OTFGlusp", Arial, Helvetica,
+    sans-serif;
 }
