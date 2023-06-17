@@ -9,6 +9,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Migra";
+  src: url("./Migra-Extralight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MigraBold";
+  src: url("./Migra-Extrabold.otf") format("truetype");
+  font-weight: bold;
+  font-style: bold;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter&family=Lilita+One&display=swap");
 
 :root,
@@ -46,6 +60,26 @@ html[data-theme="light"] {
 
   --clr-primary-2: #5d2d52;
   --menu-color: black;
+
+  --heading-filter: invert(0%);
+
+  /* Card Background in Portfolio */
+  --card-1: rgb(33, 33, 33);
+  --card-2: rgba(33, 33, 33, 0.9);
+  --card-3: rgba(33, 33, 33, 0.8);
+
+  /* Island Background in Portfolio */
+  --card-1-hover: sepia(100%) hue-rotate(310deg) brightness(0.8) saturate(3);
+  --card-2-hover: sepia(100%) hue-rotate(150deg) brightness(80%) saturate(2);
+  --card-3-hover: sepia(100%) hue-rotate(10deg) brightness(1) saturate(2);
+
+  /* Card glow */
+  --card-1-glow: #006b99;
+  --card-2-glow: #ab7a60;
+  --card-3-glow: #b1060f;
+
+  /* Foot Saturation */
+  --foot-color: saturate(1);
 }
 
 html[data-theme="dark"] {
@@ -74,17 +108,34 @@ html[data-theme="dark"] {
 
   --hero-drawing: invert(100%);
   --menu-color: black;
+
+  /* Statue Filters in Skills */
+
+  --image-filter: grayscale(50%);
+  --heading-filter: invert(100%);
+
+  /* Card Background in Portfolio */
+  --card-1: rgba(81, 81, 81);
+  --card-2: rgba(81, 81, 81, 0.7);
+  --card-3: rgba(81, 81, 81, 0.4);
+
+  /* Island Background in Portfolio */
+  --card-1-hover: sepia(100%) hue-rotate(310deg) brightness(0.8) saturate(3);
+  --card-2-hover: sepia(100%) hue-rotate(150deg) brightness(80%) saturate(2);
+  --card-3-hover: sepia(100%) hue-rotate(10deg) brightness(1) saturate(2);
+
+  /* Card glow */
+  --card-1-glow: #006b99;
+  --card-2-glow: #ab7a60;
+  --card-3-glow: #b1060f;
+
+  /* Foot Saturation */
+  --foot-color: saturate(0.3);
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Inter", "IBM Mono Plex", "OTFGlusp", Arial, Helvetica,
-    sans-serif;
-  /* transition: all 0.2s ease;, */
-}
-
-div {
-  font-family: "Inter", "IBM Mono Plex", "OTFGlusp", Arial, Helvetica,
+  font-family: "Inter", "IBM Mono Plex", "Migra", "OTFGlusp", Arial, Helvetica,
     sans-serif;
 }

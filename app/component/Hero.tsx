@@ -27,7 +27,7 @@ const Hero = () => {
               className={styles.hero_2}
               ref={ref}
               style={{
-                transform: isInView ? "none" : "translateY(150px)",
+                transform: isInView ? "none" : "translateX(150px)",
                 opacity: isInView ? 1 : 0,
                 transition: "all 0.1s linear",
               }}
@@ -37,9 +37,9 @@ const Hero = () => {
             <div
               className={styles.hero_3}
               style={{
-                transform: isInView ? "none" : "translateY(150px)",
+                transform: isInView ? "none" : "translateX(-150px)",
                 opacity: isInView ? 1 : 0,
-                transition: "all 0.13s linear",
+                transition: "all 0.1s linear",
               }}
             >
               END
@@ -55,9 +55,9 @@ const Hero = () => {
             <div
               className={styles.hero_4}
               style={{
-                transform: isInView ? "none" : "translateY(150px)",
+                transform: isInView ? "none" : "translateX(150px)",
                 opacity: isInView ? 1 : 0,
-                transition: "all 0.15s linear",
+                transition: "all 0.1s linear",
               }}
             >
               <div style={{ width: "100%" }}>
@@ -78,7 +78,7 @@ const Hero = () => {
             style={{
               transform: isInView ? "none" : "translateY(150px)",
               opacity: isInView ? 1 : 0,
-              transition: "all 0.18s linear",
+              transition: "all 0.1s linear",
             }}
           >
             <li>

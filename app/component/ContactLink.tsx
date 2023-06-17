@@ -10,7 +10,7 @@ const AiFillGithub = dynamic(() =>
 );
 const ContactLink = () => {
   return (
-    <ul style={{ listStyle: "none" }}>
+    <ul style={{ listStyle: "none", display: "flex" }}>
       <li>
         <a
           href="https://www.linkedin.com/in/roy-kim-0428b7276/"

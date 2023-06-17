@@ -1,49 +1,176 @@
+@font-face {
+  font-family: "Migra";
+  src: url("../Migra-Extralight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .skills_container {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   text-align: center;
-  /* overflow: hidden; */
+  height: 100vh;
+  overflow: hidden;
 }
 
-.skills_content {
-  display: block;
+/* Sliding text */
+.marquee,
+.marquee2 {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  max-width: 100%;
+  height: 50px;
+  overflow: hidden;
+  z-index: 2;
+  margin-top: 40rem;
+  align-items: center;
+  background-color: var(--about-text);
+}
+.marquee {
+  transform: rotate(10deg);
 }
 
-.skills_content h2 {
-  color: var(--about-title);
-  font-size: 36px;
+.marquee2 {
+  transform: rotate(2deg);
 }
 
-.skill_motion {
-  text-align: center;
-  cursor: pointer;
+.track {
+  position: relative;
+  white-space: nowrap;
 }
 
-.skill_name {
-  font-size: 12px;
-  font-family: "IBM Plex Mono";
+.track > h1 {
+  font-size: 20px;
+  font-family: "Migra";
+  text-transform: uppercase;
+  color: var(--page-bg);
 }
 
-@media screen and (max-width: 600px) {
-  .skills_container h2 {
-    font-size: 24px;
+.heading {
+  position: relative;
+  margin-top: 4rem;
+}
+
+.heading h1 {
+  font-family: "Migra";
+  font-size: 90px;
+  font-weight: 200;
+  margin-bottom: -2.4rem;
+}
+
+.heading img {
+  position: relative;
+  width: 420px;
+  margin-top: 1rem;
+  height: auto;
+  filter: var(--heading-filter);
+}
+
+.ball_container {
+  width: 100%;
+  margin-top: 3rem;
+  position: absolute;
+  z-index: 3;
+}
+
+.ball {
+  position: relative;
+  filter: var(--image-filter);
+}
+
+.ball_content {
+  position: relative;
+}
+
+.ball span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  padding: 0.5rem;
+  justify-content: center;
+  display: flex;
+  color: white;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.489);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(11px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.ball_container img {
+  animation: spin 6s infinite linear;
+}
+
+.ball:nth-child(2) {
+  display: flex;
+  margin-top: -3rem;
+  justify-content: space-between;
+  padding: 0 8rem;
+}
+
+.ball:nth-child(3) {
+  display: flex;
+  margin-top: 4rem;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+.ball:nth-child(4) {
+  display: flex;
+  margin-top: 4rem;
+  justify-content: space-between;
+}
+
+.center_container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+}
+
+.venus {
+  position: relative;
+  margin-top: 10rem;
+  z-index: 100;
+  filter: var(--image-filter);
+  animation: float 4s infinite ease-in-out;
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  margin-top: 11rem;
+  background: var(--contact-text);
+  filter: blur(75px);
+  z-index: 1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   }
 }
 
-@media screen and (max-width: 500px) {
-  .skills_container {
-    max-width: 95%;
-    overflow-x: hidden;
-    opacity: 1 !important;
+@keyframes float {
+  0% {
+    transform: translateY(10px);
   }
 
-  .skills_content {
-    margin: 0 auto;
-    grid-template-columns: repeat(2, 1fr);
+  50% {
+    transform: translateY(0rem);
   }
 
-  .skills_learning_content {
-    grid-template-columns: repeat(2, 1fr);
+  100% {
+    transform: translateY(10px);
   }
 }

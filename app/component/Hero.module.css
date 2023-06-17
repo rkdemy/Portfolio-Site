@@ -39,6 +39,7 @@
 .hero_3,
 .hero_4,
 .hero_links {
+  font-family: "OTFGlusp";
   display: flex;
 }
 
@@ -49,7 +50,6 @@
 .image_container {
   position: relative;
   width: 100%;
-  /* height: 85px; */
   object-fit: cover;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .hero_links a {
-  font-family: "IBM Plex Mono";
+  font-family: "Migra", "IBM Plex Mono", "Inter";
   text-decoration: none;
   color: var(--hero-name);
   position: relative;

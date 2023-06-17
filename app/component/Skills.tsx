@@ -1,11 +1,14 @@
 "use client";
-import * as React from "react";
-import { useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { distance } from "popmotion";
+import React, { useRef } from "react";
 import styles from "./Skills.module.css";
-import AnimateText from "./animation/AnimateText";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import underline from "../assets/skills_images/Underline.png";
+import blurBall from "../assets/skills_images/energyball.png";
+import ball from "../assets/skills_images/energyball.svg";
+import { motion, useInView } from "framer-motion";
+import venusBlur from "../assets/skills_images/VenusDeMilo.png";
+import Venus from "../assets/skills_images/VenusDeMilo.svg";
 
 // Dynamic imports for the React icons
 const AiFillHtml5 = dynamic(() =>
@@ -45,106 +48,212 @@ const SiPrisma = dynamic(() =>
   import("react-icons/si").then((module) => module.SiPrisma)
 );
 
-const grid = [
-  [
-    { logo: <AiFillHtml5 />, name: "HTML5" },
-    { logo: <DiCss3 />, name: "CSS3" },
-    { logo: <SiJavascript />, name: "JavaScript" },
-  ],
-  [
-    { logo: <DiReact />, name: "React" },
-    { logo: <AiFillGithub />, name: "GitHub" },
-    { logo: <SiFirebase />, name: "Firebase" },
-  ],
-  [
-    { logo: <SiAuth0 />, name: "Auth0" },
-    { logo: <SiFigma />, name: "Figma" },
-    { logo: <SiStyledcomponents />, name: "styled-components" },
-  ],
-];
-
-const size = 10;
-const gap = 160;
-
-const Square = ({ content, active, setActive, colIndex, rowIndex, x, y }) => {
-  const isDragging = colIndex === active.col && rowIndex === active.row;
-  const d = distance(
-    { x: active.col, y: active.row },
-    { x: colIndex, y: rowIndex }
-  );
-  const springConfig = {
-    stiffness: Math.max(700 - d * 120, 0),
-    damping: 20 + d * 5,
-  };
-  const dx = useSpring(x, springConfig);
-  const dy = useSpring(y, springConfig);
-
-  return (
-    <motion.div
-      drag
-      dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-      dragTransition={{ bounceStiffness: 500, bounceDamping: 20 }}
-      dragElastic={1}
-      onDragStart={() => setActive({ row: rowIndex, col: colIndex })}
-      style={{
-        fontSize: "50px",
-        top: rowIndex * (size + gap),
-        left: colIndex * (size + gap),
-        position: "absolute",
-        x: isDragging ? x : dx,
-        y: isDragging ? y : dy,
-        zIndex: isDragging ? 1 : 0,
-      }}
-    >
-      {content.logo}
-      <div className={styles.skill_name}>{content.name}</div>
-    </motion.div>
-  );
+const marqueeVariants = {
+  animate: {
+    x: [0, -1035],
+    transition: {
+      x: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 6,
+        ease: "linear",
+      },
+    },
+  },
 };
 
 const Skills = () => {
-  const [active, setActive] = useState({ row: 0, col: 0 });
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const ref = useRef();
+  const isInView = useInView(ref, { once: true });
+
+  const ballAnimate = {
+    opacity: isInView ? 1 : 0,
+    zIndex: 100,
+    transform: isInView ? "translateY(0)" : "translateX(200px)",
+    transition: "all 1s linear",
+  };
+
+  const ballAnimate2 = {
+    opacity: isInView ? 1 : 0,
+    zIndex: 100,
+    transform: isInView ? "translateY(0)" : "translateX(-200px)",
+    transition: "all 1s linear",
+  };
 
   return (
     <div className={styles.skills_container}>
-      <div className={styles.skills_content}>
-        <h2>
-          <AnimateText text="TECHNOLOGIES" />
-        </h2>
-
+      <div className={styles.marquee}>
         <motion.div
-          className={styles.skill_motion}
-          style={{ width: "100%", height: "100%" }}
+          className={styles.track}
+          variants={marqueeVariants}
+          animate="animate"
         >
-          <motion.div
-            style={{
-              width: (size + gap) * 4 - gap,
-              height: (size + gap) * 4 - gap,
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              position: "relative",
-              perspective: 500,
-            }}
-          >
-            {grid.map((row, rowIndex) =>
-              row.map((_item, colIndex) => (
-                <Square
-                  content={_item}
-                  x={x}
-                  y={y}
-                  active={active}
-                  setActive={setActive}
-                  rowIndex={rowIndex}
-                  colIndex={colIndex}
-                  key={rowIndex + colIndex}
-                />
-              ))
-            )}
-          </motion.div>
+          <h1>
+            REACT - NEXT - FIGMA - AUTH0 - FIREBASE - GITHUB - HTML - CSS -
+            STYLED COMPONENTS - REACT - NEXT - FIGMA - AUTH0 - FIREBASE - GITHUB
+            - HTML - CSS - STYLED COMPONENTS - REACT - NEXT - FIGMA - AUTH0 -
+            FIREBASE - GITHUB - HTML - CSS - STYLED COMPONENTS - REACT - NEXT -
+            FIGMA - AUTH0 - FIREBASE - GITHUB - HTML - CSS - STYLED COMPONENTS -
+            REACT - NEXT - FIGMA - AUTH0 - FIREBASE - GITHUB - HTML - CSS -
+            STYLED COMPONENTS -
+          </h1>
         </motion.div>
+      </div>
+      <div className={styles.marquee2} ref={ref}>
+        <motion.div
+          className={styles.track}
+          variants={marqueeVariants}
+          animate="animate"
+        >
+          <h1>
+            REACT - NEXT - FIGMA - AUTH0 - FIREBASE - GITHUB - HTML - CSS -
+            STYLED COMPONENTS - REACT - NEXT - FIGMA - AUTH0 - FIREBASE - GITHUB
+            - HTML - CSS - STYLED COMPONENTS - REACT - NEXT - FIGMA - AUTH0 -
+            FIREBASE - GITHUB - HTML - CSS - STYLED COMPONENTS - REACT - NEXT -
+            FIGMA - AUTH0 - FIREBASE - GITHUB - HTML - CSS - STYLED COMPONENTS -
+            REACT - NEXT - FIGMA - AUTH0 - FIREBASE - GITHUB - HTML - CSS -
+            STYLED COMPONENTS -
+          </h1>
+        </motion.div>
+      </div>
+      <div className={styles.skills_content}>
+        <div
+          className={styles.heading}
+          style={{ opacity: isInView ? 1 : 0, transition: "all 0.6s linear" }}
+        >
+          <h1>Skills & Tech</h1>
+          <Image src={underline} />
+        </div>
+        <div
+          className={styles.center_container}
+          style={{
+            opacity: isInView ? 1 : 0,
+            zIndex: 100,
+            transform: isInView ? "translateY(0)" : "translateY(200px)",
+            transition: "all 1s linear",
+          }}
+        >
+          <Image
+            src={Venus}
+            blurDataURL={venusBlur.src}
+            placeholder="blur"
+            alt="Statue of Venus de Milo"
+            className={styles.venus}
+          />
+          <div
+            className={styles.glow}
+            style={{ opacity: isInView ? 1 : 0, transition: "all 0.6s linear" }}
+          ></div>
+
+          <div className={styles.ball_container}>
+            <div
+              className={styles.ball}
+              style={{
+                opacity: isInView ? 1 : 0,
+                zIndex: 100,
+                transform: isInView ? "translateY(0)" : "translateY(200px)",
+                transition: "all 1s linear",
+              }}
+            >
+              <Image
+                src={ball}
+                blurDataURL={blurBall.src}
+                width={100}
+                height={100}
+                placeholder="blur"
+                alt="Black and white ball"
+              />
+              <span>
+                <DiReact />
+              </span>
+            </div>
+            <div className={styles.ball}>
+              <div className={styles.ball_content} style={ballAnimate}>
+                <Image
+                  src={ball}
+                  blurDataURL={blurBall.src}
+                  width={100}
+                  height={100}
+                  placeholder="blur"
+                  alt="Black and white ball"
+                />
+                <span>
+                  <SiNextdotjs />
+                </span>
+              </div>
+
+              <div className={styles.ball_content} style={ballAnimate2}>
+                <Image
+                  src={ball}
+                  blurDataURL={blurBall.src}
+                  width={100}
+                  height={100}
+                  placeholder="blur"
+                  alt="Black and white ball"
+                />
+                <span>
+                  <SiJavascript />
+                </span>
+              </div>
+            </div>
+            <div className={styles.ball}>
+              <div className={styles.ball_content} style={ballAnimate}>
+                <Image
+                  src={ball}
+                  blurDataURL={blurBall.src}
+                  width={100}
+                  height={100}
+                  placeholder="blur"
+                  alt="Black and white ball"
+                />
+                <span>
+                  <AiFillGithub />
+                </span>
+              </div>
+              <div className={styles.ball_content} style={ballAnimate2}>
+                <Image
+                  src={ball}
+                  blurDataURL={blurBall.src}
+                  width={100}
+                  height={100}
+                  placeholder="blur"
+                  alt="Black and white ball"
+                />
+                <span>
+                  <SiStyledcomponents />
+                </span>
+              </div>
+            </div>
+            <div className={styles.ball}>
+              <div className={styles.ball_content} style={ballAnimate}>
+                <Image
+                  src={ball}
+                  blurDataURL={blurBall.src}
+                  width={100}
+                  height={100}
+                  placeholder="blur"
+                  alt="Black and white ball"
+                />
+                <span>
+                  <SiFigma />
+                </span>
+              </div>
+              <div className={styles.ball_content} style={ballAnimate2}>
+                <Image
+                  src={ball}
+                  blurDataURL={blurBall.src}
+                  width={100}
+                  height={100}
+                  placeholder="blur"
+                  alt="Black and white ball"
+                />
+                <span>
+                  <DiCss3 />
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

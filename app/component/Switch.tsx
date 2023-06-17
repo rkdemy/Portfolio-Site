@@ -70,9 +70,6 @@ const Switch = () => {
       className={styles.switch_container}
       ref={containerRef}
       onClick={animationHandler}
-      style={{
-        transition: "all 0.9s cubic-bezier(0.5, 0.2, 0.2, 1) 0.5s",
-      }}
     >
       <span className={styles.circle} ref={circleRef}></span>
     </div>
