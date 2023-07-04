@@ -2,9 +2,22 @@
   background-color: var(--page-bg);
 }
 
-.hero {
+.noise::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-  z-index: -2;
+  content: "";
+  opacity: 0.05;
+  z-index: 1;
+  pointer-events: none;
+  background: url("./assets/noise.gif");
+}
+
+.hero {
+  z-index: 2;
+  height: 100vh;
   top: 0;
   left: 0;
   right: 0;
@@ -32,9 +45,12 @@
   /* background-image: url("./assets/page_texture.png");
   background-position: center; */
   /* background */
+  z-index: 2;
 }
 
 .portfolio {
+  z-index: 2;
+
   display: flex;
   justify-content: center;
   height: auto;
@@ -44,8 +60,9 @@
 
 .contact {
   display: flex;
+  z-index: 2;
+
   justify-content: center;
   background-color: var(--page-bg);
   box-sizing: border-box;
 }
-

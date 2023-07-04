@@ -19,10 +19,10 @@ interface CardProps {
   title: string;
   image?: string;
   tech: Array<string>;
-  tag: string;
+  glowColor: string;
 }
 
-const Card = ({ key, title, image, tech, tag }: CardProps) => {
+const Card = ({ key, title, image, tech, glowColor }: CardProps) => {
   const [flip, setFlip] = useState(false);
 
   return (
@@ -36,7 +36,11 @@ const Card = ({ key, title, image, tech, tag }: CardProps) => {
         <div className={styles.card_inner}>
           <div className={`${styles.card} ${styles.card_front}`}>
             <div className={styles.card_item}>
-              <span>{tag}</span>
+              <div className={styles.card_item}>
+                {tech.map((item) => (
+                  <span>{item}</span>
+                ))}
+              </div>
             </div>
             <div className={styles.card_item2}>
               <Image
@@ -60,20 +64,21 @@ const Card = ({ key, title, image, tech, tag }: CardProps) => {
                   <Image src={image} />
                 </span>
               </div>
-              <div className={styles.glow}></div>
+              <div
+                className={styles.glow}
+                style={{ backgroundColor: glowColor }}
+              ></div>
             </div>
             <div className={styles.card_item3}>
               <span>{title}</span>
               <span>
-                <BsArrowRightCircle />
+                <h4>More</h4> <BsArrowRightCircle />
               </span>
             </div>
           </div>
           <div className={`${styles.card} ${styles.card_back}`}>
             <div className={styles.card_item}>
-              {tech.map((item) => (
-                <span>{item}</span>
-              ))}
+              <span>{title}</span>
             </div>
             <div
               className={styles.card_item2}
@@ -92,13 +97,9 @@ const Card = ({ key, title, image, tech, tag }: CardProps) => {
               />
               <Image src={image} />
             </div>
-            <div className={styles.card_item3}>
-              <div className={styles.card_item3_position}>
-                <span>{title}</span>
-                <span>
-                  <BsArrowRightCircle />
-                </span>
-              </div>
+            <div className={`${styles.card_item3} ${styles.card_item3_back}`}>
+              <span>Live Site</span>
+              <span>Github</span>
             </div>
           </div>
         </div>

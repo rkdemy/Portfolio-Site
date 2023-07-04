@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 80;
   height: 100vh;
 }
 
@@ -40,6 +41,7 @@
 .hero_4,
 .hero_links {
   font-family: "OTFGlusp";
+  z-index: 80;
   display: flex;
 }
 

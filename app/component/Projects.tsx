@@ -23,7 +23,7 @@ const Projects = () => {
               title="Disney Clone"
               image={Disney}
               tech={["React", "TMDB API", "Firebase"]}
-              tag="Disney"
+              glowColor="#006B99"
             />
           </span>
           <span className={styles.card_content} key="2">
@@ -32,7 +32,7 @@ const Projects = () => {
               title="Ecommerce Store"
               image={NotIkea}
               tech={["React", "API", "styled-components"]}
-              tag="NOT IKEA"
+              glowColor="#AB7A60"
             />
           </span>
 
@@ -42,7 +42,7 @@ const Projects = () => {
               title="Netflix Clone"
               image={NetflixLogo}
               tech={["React", "API"]}
-              tag="Netflix"
+              glowColor="#FF9398"
             />
           </span>
         </div>

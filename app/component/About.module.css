@@ -72,6 +72,7 @@
 
 .glow {
   position: relative;
+  z-index: 79;
   width: 359px;
   height: 359px;
   margin-top: 10rem;

@@ -64,9 +64,9 @@ html[data-theme="light"] {
   --heading-filter: invert(0%);
 
   /* Card Background in Portfolio */
-  --card-1: rgb(33, 33, 33);
-  --card-2: rgba(33, 33, 33, 0.9);
-  --card-3: rgba(33, 33, 33, 0.8);
+  --card-1: rgba(81, 81, 81);
+  --card-2: rgba(81, 81, 81, 0.7);
+  --card-3: rgba(81, 81, 81, 0.4);
 
   /* Island Background in Portfolio */
   --card-1-hover: sepia(100%) hue-rotate(310deg) brightness(0.8) saturate(3);
